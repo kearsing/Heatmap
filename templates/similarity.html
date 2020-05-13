@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cosine Similarity</title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+    {% include 'navigation.html' %}
+</head>
+<style>
+            body {
+                text-align:center;
+                align:center;
+            }
+
+            table{
+                margin-left:auto;
+                margin-right:auto;
+
+            }
+
+ </style>
+<body>
+<h3>Data Summary:</h3>
+<p>Vocabulary Size = <b>{{ word_count }} unique words</b></p>
+<p><u>Unique Categories/Labels:</u> {{labels}}</p>
+
+<script>
+labels = {{labels}}
+console.log(labels)
+</script>
+<button class="btn btn-success" onclick="window.location.href = 'VisualMatrix';">Continue: Heatmap Visualization</button>
+<br>
+<table class="table table-dark">
+    <br>
+{% for table in table1 %}
+
+            Document Similarity Scores:
+            {{ table|safe }}
+{% endfor %}
+</table>
+<br>
+{% for table in table2 %}
+
+            Word Popularity by Document:
+            {{ table|safe }}
+{% endfor %}
+<br>
+<button class="btn btn-success" onclick="window.location.href = 'VisualMatrix';">Continue: Heatmap Visualization</button>
+
+</body>
+</html>

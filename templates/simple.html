@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Data</title>
+     <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+    {% include 'navigation.html' %}
+</head>
+ <style>
+            body {
+                text-align:center;
+                align:center;
+            }
+
+            table{
+                margin-left:auto;
+                margin-right:auto;
+
+
+
+
+ </style>
+<body>
+<h3>Preview your data (first 20 rows)</h3>
+<button class="btn btn-success"  onclick="window.location.href = 'similarity';">Continue: Analyze Similarity</button>
+<br>
+<br>
+
+{% for table in tables %}
+
+           <!-- {{titles[loop.index]}} -->
+            {{ table|safe }}
+{% endfor %}
+
+<br>
+<button class="btn btn-success"  onclick="window.location.href = 'similarity';">Continue: Analyze Similarity</button>
+</body>
+</html>

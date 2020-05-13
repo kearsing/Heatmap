@@ -1,0 +1,50 @@
+<!doctype html>
+<head>
+   <title>Upload Data</title>
+
+    {% include 'navigation.html' %}
+</head>
+<body>
+ <style>
+            body {
+                text-align:center;
+            }
+ </style>
+
+<h1>Create an interactive Similarity Heatmap from Text Data.</h1>
+ <fieldset class="border border-primary">
+     This system uses Scikit-Learn Cosine Similarity and the TfIdfVectorizer() function with stopwords removed to analyze the similarity between different categories of text.<br>
+     D3.js is used to create an interactive similarity matrix, or heatmap, like this:<br>
+     <img src="/static/sim_matrix.png" alt="heatmap example" style="width:300px;height:200px;"><br>
+     <b>All you have to do is upload a labelled csv file!</b>
+ </fieldset>
+ <fieldset class="border border-primary">
+  <h2>Upload CSV File:</h2>
+  <p>The file must be 2 colums, with no headers (column names)</p>
+    <p>The first column will be the label, or category, of the text</p>
+    <p>The second column will be the text to analyze</p>
+    <p>Labels may repeat.  Text from repeating labels will be combined into one document for that label</p>
+    <p>For example: a CSV file containing Yelp reviews across an array of restaurants might have cuisine type as the label, and an individual review in the text column.</p>
+
+      <form  style="background-color:#c3e2e4" method=post enctype=multipart/form-data  >
+          <div class="form-group">
+
+         <input type=file name=file accept="csv">
+         <input type=submit value=Upload>
+          </div>
+
+  </form>
+
+ </fieldset>
+
+<fieldset class="border border-primary">
+     <legend>Example files</legend>
+    <p>You can download one of these files to test the functionality and preview the expected format.</p>
+    <a href="\static\Big_Cuisines.csv">3000+ Yelp reviews from 30+ cuisine types</a><br>
+    <a href="\static\Cuisine.csv">Smaller Yelp reviews dataset from 4 cuisine types</a><br>
+    <a href="\static\Bay_Spielberg.csv">Michael Bay & Steven Spielberg movie plots, arranged by movie</a>
+
+</fieldset>
+
+
+</body>
